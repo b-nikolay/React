@@ -1,0 +1,7 @@
+.content {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px;
+  flex: 0 1 80%;
+  text-align: left;
+}

@@ -1,0 +1,23 @@
+.sidebar {
+  margin-right: 20px;
+  padding: 15px 0;
+  flex: 0 1 20%;
+}
+
+.link {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 5px 5px 5px 5px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+}
+.link:hover{
+  color: blueviolet;
+}
+.link:first-child {
+  padding-top: 0;
+}
+.list a {
+  color: black;
+}
