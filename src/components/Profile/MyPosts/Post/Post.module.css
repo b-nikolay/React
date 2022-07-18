@@ -2,4 +2,15 @@
   display: inline-block;
   border-radius: 50%;
 }
+.post {
+  display: flex;
+  align-items: center;
+}
+.like {
+  display: block;
+  padding: 10px 15px;
+  background-color: blueviolet;
+  font-size: 16px;
+  color: white;
+}
 
