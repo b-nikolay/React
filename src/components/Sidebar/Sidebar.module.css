@@ -4,20 +4,36 @@
   flex: 0 1 20%;
 }
 
-.link {
+.item a {
   margin-left: 10px;
   margin-bottom: 10px;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 5px 15px 5px;
   display: inline-block;
   font-size: 18px;
   font-weight: 600;
+  transition: .1s ease-in-out;
+  
 }
-.link:hover{
+
+.item a:hover {
   color: blueviolet;
 }
-.link:first-child {
+
+.item a.activeLink  {
+  color: blueviolet !important;
+}
+
+.link {
+}
+
+.item a:first-child {
   padding-top: 0;
 }
+
+.item:last-child {
+  margin-top: 50px;
+}
+
 .list a {
-  color: black;
+  color: white;
 }

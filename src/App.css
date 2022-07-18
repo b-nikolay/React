@@ -34,7 +34,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
   visibility: hidden;
 }
 body {
-  background-color: white;
+  background-color: rgb(34, 34, 34);
 }
 
 .wrapper {
@@ -52,31 +52,6 @@ body {
   color: black;
 }
 
-.header {
-  padding: 20px 0px;
-}
-
-.sidebar {
-  margin-right: 20px;
-  padding: 15px 0;
-  flex: 0 1 20%;
-}
-
-.sidebar__link {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: 5px 5px 5px 5px;
-  display: inline-block;
-  font-size: 18px;
-  font-weight: 600;
-}
-.sidebar__link:first-child {
-  padding-top: 0;
-}
-.sidebar__list a {
-  color: black;
-}
-
 .content {
   font-size: 18px;
   font-weight: 500;
@@ -85,8 +60,8 @@ body {
   text-align: left;
 }
 
-.content__img img {
+/* .content__img img {
   display: block;
   min-width: 100%;
   height: 400px;
-}
+} */
