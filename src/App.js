@@ -19,10 +19,10 @@ const App = () => {
           <Sidebar />
           <div className='content'>
             <Routes>
-              <Route path='/messages' element={<Messages />} />
-              <Route path='/profile' element={<Profile />} />
-              <Route path='/settings' element={<Settings />} />
-              <Route path='/news' element={<News />} />
+              <Route  path='/messages' element={<Messages />} />
+              <Route  path='/profile' element={<Profile />} />
+              <Route  path='/settings' element={<Settings />} />
+              <Route  path='/news' element={<News />} />
             </Routes>
           </div>
         </div>
