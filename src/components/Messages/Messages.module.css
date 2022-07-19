@@ -8,12 +8,12 @@
 
 }
 
-.active  a, .userLink:hover{
-  color: blueviolet;
+.userLink{
+  color: white;
 }
 
-a {
-  color: white;
+a, .userLink:hover {
+  color: blueviolet;
 }
 
 .title {

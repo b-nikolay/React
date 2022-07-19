@@ -8,9 +8,10 @@ import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
-import { BrowserRouter,Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className='wrapper'>
@@ -19,10 +20,11 @@ const App = () => {
           <Sidebar />
           <div className='content'>
             <Routes>
-              <Route  path='/messages' element={<Messages />} />
-              <Route  path='/profile' element={<Profile />} />
-              <Route  path='/settings' element={<Settings />} />
-              <Route  path='/news' element={<News />} />
+              <Route path='/messages/*' element={<Messages users={props.users} messages={props.messages} />} />
+              <Route path='/profile' element={<Profile posts={props.posts} />} />
+              <Route path='/settings' element={<Settings />} />
+              <Route path='/news' element={<News />} />
+
             </Routes>
           </div>
         </div>
