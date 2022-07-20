@@ -7,9 +7,9 @@ import Message from './Message/Message';
 const Messages = (props) => {
 
 
-  let userElements = props.users.map(user => <UserItem name={user.name} id={user.id} />);
+  let userElements = props.state.users.map(user => <UserItem name={user.name} id={user.id} />);
 
-  let messagesElements = props.messages.map(message => <Message message={message.message} />);
+  let messagesElements = props.state.messages.map(message => <Message message={message.message} />);
 
 
 

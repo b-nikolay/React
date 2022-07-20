@@ -8,29 +8,28 @@ import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
+import Friends from './components/Sidebar/Friends/Friends';
+
+
 
 const App = (props) => {
 
   return (
-    <BrowserRouter>
       <div className='wrapper'>
         <Header />
         <div className='main'>
-          <Sidebar />
+          <Sidebar state={props.state.sidebar} />
           <div className='content'>
             <Routes>
-              <Route path='/messages/*' element={<Messages users={props.users} messages={props.messages} />} />
-              <Route path='/profile' element={<Profile posts={props.posts} />} />
+              <Route path='/messages/*' element={<Messages state={props.state.messagePage} />} />
+              <Route path='/profile' element={<Profile state={props.state.profilePage} />} />
               <Route path='/settings' element={<Settings />} />
               <Route path='/news' element={<News />} />
-
             </Routes>
           </div>
         </div>
       </div>
-    </BrowserRouter>
-
   );
 }
 

@@ -10,6 +10,14 @@
 
 .userLink{
   color: white;
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.activeLink {
+  margin-left: 10px;
+  font-weight: 600;
 }
 
 a, .userLink:hover {
@@ -46,18 +54,37 @@ a, .userLink:hover {
 .user {
   margin: 10px 0;
   padding: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .messages {
-  
+  display: flex;
   flex: 0 1 70%;
   text-align: left;
   position: relative;
+  flex-direction: column;
 }
 
 .message {
   padding-left: 5px;
-  margin: 20px 0;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+.message:nth-child() {
+   margin-left: auto;
+}
+
+.text {
+  margin-left: 20px;
+}
+
+.avatar, .avatar img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 /* .messages::before {
