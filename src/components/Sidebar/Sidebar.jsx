@@ -22,7 +22,7 @@ const Sidebar = (props) => {
           <NavLink to='/settings' className={({ isActive }) => isActive ? classes.activeLink : classes.link}>Settings</NavLink>
         </li>
         <li className={classes.item}>
-          <a className={classes.link}>Friends</a>
+          <div className={classes.title}>Friends</div>
           <Friends users={props.state.users}/>
         </li>
       </ul>

@@ -7,3 +7,27 @@
 }
 .posts {
 }
+
+.newPost textarea {
+  background-color:rgba(240, 248, 255, 0);
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  width: 100%;
+  resize: none;
+}
+
+
+.newPost {
+  margin-top: 20px;
+}
+
+.button {
+  margin-left: auto;
+  display: block;
+  padding: 10px;
+  background-color:blueviolet;
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+}
