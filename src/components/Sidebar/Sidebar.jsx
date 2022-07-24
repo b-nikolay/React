@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import StoreContext from '../../StoreContext';
 import Friends from './Friends/Friends';
 
 import classes from './Sidebar.module.css';
@@ -23,7 +24,13 @@ const Sidebar = (props) => {
         </li>
         <li className={classes.item}>
           <div className={classes.title}>Friends</div>
-          <Friends users={props.state.users}/>
+          <StoreContext.Consumer>
+            {
+              (store) => {
+               return <Friends users={store.getState().sidebar.users} />
+              }
+            }
+          </StoreContext.Consumer>
         </li>
       </ul>
     </div>

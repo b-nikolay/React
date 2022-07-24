@@ -2,6 +2,7 @@
   
   color: white;
   font-size: 16px;
+  
 }
 
 .content {
@@ -38,6 +39,8 @@ a, .userLink:hover {
 .info {
   display: flex;
   justify-content: space-between;
+  max-height:50vh;
+  min-height:50vh;
 }
 
 .messages, .users {
@@ -106,7 +109,7 @@ a, .userLink:hover {
   padding: 5px;
   position: relative;
   display: flex;
-  align-items: center;
+  margin-top: auto;
 }
 
 .messageSend textarea {

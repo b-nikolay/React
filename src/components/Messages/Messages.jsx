@@ -2,12 +2,12 @@ import React from 'react';
 import classes from './Messages.module.css';
 import UserItem from './User/UserItem';
 import Message from './Message/Message';
-import { sendMessageCreator, updateMessageBodyCreator } from '../../Redux/message-reducer';
+
 
 
 const Messages = (props) => {
 
-  let state = props.store.getState().messagePage;
+  let state = props.messagePage;
 
 
   let userElements = state.users.map(user => <UserItem name={user.name} id={user.id} />);
@@ -19,12 +19,12 @@ const Messages = (props) => {
   // let sendMessageElement = React.createRef();
 
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator());
+    props.sendMessage();
   }
 
   let onNewMessageChange = (e) => {
     let body = e.target.value;
-    props.store.dispatch(updateMessageBodyCreator(body));
+    props.updateMessageBody(body)
 
   }
 

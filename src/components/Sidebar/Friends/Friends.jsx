@@ -6,7 +6,6 @@ import classes from './Friends.module.css';
 const Friends = (props) => {
 
 
-
   let user = props.users.map(user => <Friend name={user.name} src={user.src} />)
 
   return (
