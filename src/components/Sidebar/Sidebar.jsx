@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import StoreContext from '../../StoreContext';
-import Friends from './Friends/Friends';
+import FriendsContainer from './Friends/FriendsContainer';
 
 import classes from './Sidebar.module.css';
+
+
 
 
 const Sidebar = (props) => {
@@ -17,6 +18,9 @@ const Sidebar = (props) => {
           <NavLink to='/messages' className={({ isActive }) => isActive ? classes.activeLink : classes.link}>Messages</NavLink>
         </li>
         <li className={classes.item}>
+          <NavLink to='/users' className={({ isActive }) => isActive ? classes.activeLink : classes.link}>Users</NavLink>
+        </li>
+        <li className={classes.item}>
           <NavLink to='/news' className={({ isActive }) => isActive ? classes.activeLink : classes.link}>News</NavLink>
         </li>
         <li className={classes.item}>
@@ -24,13 +28,9 @@ const Sidebar = (props) => {
         </li>
         <li className={classes.item}>
           <div className={classes.title}>Friends</div>
-          <StoreContext.Consumer>
-            {
-              (store) => {
-               return <Friends users={store.getState().sidebar.users} />
-              }
-            }
-          </StoreContext.Consumer>
+
+          <FriendsContainer />
+          
         </li>
       </ul>
     </div>

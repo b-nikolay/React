@@ -2,15 +2,15 @@
 import './App.css';
 
 import React from 'react';
-import Header from './components/Header/Header';
+import { Route, Routes } from 'react-router-dom';
 
+import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile';
 import Sidebar from './components/Sidebar/Sidebar';
 import News from './components/News/News';
-
 import Settings from './components/Settings/Settings';
-import { Route, Routes } from 'react-router-dom';
 import MessagesContainer from './components/Messages/MessagesContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 
@@ -26,6 +26,7 @@ const App = (props) => {
             <Route path='/messages/*' element={<MessagesContainer/>}
             />
             <Route path='/profile' element={<Profile/>}/>
+            <Route path='/users' element={<UsersContainer/>}/>
             <Route path='/settings' element={<Settings />} />
             <Route path='/news' element={<News />} />
           </Routes>

@@ -10,9 +10,9 @@ const Messages = (props) => {
   let state = props.messagePage;
 
 
-  let userElements = state.users.map(user => <UserItem name={user.name} id={user.id} />);
+  let userElements = state.users.map(user => <UserItem name={user.name} key={user.id} id={user.id} />);
 
-  let messagesElements = state.messages.map(message => <Message message={message.message} />);
+  let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id} />);
 
   let newMessageBody = state.newMessageBody;
 
