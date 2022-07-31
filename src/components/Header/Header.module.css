@@ -1,6 +1,33 @@
 .header {
   padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 15px;
 }
 .logo {
   width: 60px;
+}
+.login {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+.login:hover {
+  color:blueviolet;
+  transition: .3s ease-in-out;
+}
+
+.login a {
+  
+  color: white ;
+  transition: .3s ease-in-out;
+}
+
+.login a:hover {
+  
+  color:blueviolet;
+  transition: .3s ease-in-out;
 }
