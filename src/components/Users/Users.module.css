@@ -2,12 +2,7 @@
   color: white;
 }
 
-.title {
-  font-size: 36px;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 50px;
-}
+
 .avatar {
   width: 80px;
   height: 80px;
@@ -47,4 +42,43 @@
 .follow:hover {
   
   background-color: rgb(112, 16, 202);
+}
+
+
+.pagination span {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  display: inline-block;
+  border: 1px solid white;
+  padding: 5px;
+  
+}
+ .select {
+  display: inline-block;
+  color: blueviolet;
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.title {
+  font-size: 36px;
+  font-weight: bold;;
+  margin-bottom: 50px;
+}
+.pagination {
+  margin-bottom: 20px;
+
+}
+
+button:disabled {
+  background-color: aqua;
+  color: black;
+  transition: .1s ease-in-out;
+}
+button:disabled:hover {
+  background-color: aqua;
+  color: black;
+  transition: .1s ease-in-out;
 }

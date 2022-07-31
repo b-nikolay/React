@@ -1,38 +1,61 @@
-import * as axios from 'axios';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import userPhoto from '../../assets/images/avatar.png'
-// import UserItem from './User/UserItem';
 
 import classes from './Users.module.css';
 
-const Users = (props) => {
 
-  
-    if (props.users.length === 0) {
+let Users = (props) => {
+  let pagesCounts = Math.ceil(props.totalUsersCount / props.pageSize);
 
-      axios
-      .get('https://social-network.samuraijs.com/api/1.0/users')
-      .then(response => {
-        props.setUsers(response.data.items)
-      });
-    }
-  
+  let pages = [];
 
-  return (  
+  // let path = '/profile/*' + us
+
+
+  for (let i = 1; i <= pagesCounts; i++) {
+    pages.push(i)
+  }
+
+
+  return (
     <div className={classes.content}>
       <h2 className={classes.title}>Users</h2>
-      {/* <button onClick={getUsers}>Get users</button> */}
+      <div className={classes.pagination}>
+        {pages.map(page => {
+
+          return (
+            <span
+              key={page}
+              className={props.currentPage === page ? classes.select : ''}
+              onClick={() => {
+                props.onPageChanged(page)
+              }}
+            >{page}</span>
+          )
+        })}
+      </div>
       {
 
         props.users.map(user => {
           return (
             <div className={classes.user} key={user.id}>
               <div className={classes.element}>
-                <img src={user.photos.small !== null ? user.photos.small : userPhoto} alt={user.name} className={classes.avatar} />
+                <NavLink to={'/profile/' + user.id}>
+
+                  <img src={user.photos.small !== null ? user.photos.small : userPhoto} alt={user.name} className={classes.avatar} />
+                </NavLink>
                 {
                   user.followed
-                    ? <button onClick={() => { props.unfollow(user.id) }} className={classes.follow}>UnFollow</button>
-                    : <button onClick={() => { props.follow(user.id) }} className={classes.follow}>Follow</button>
+                    ? <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
+                      props.unFollow(user.id)
+                    }} 
+                    className={classes.follow}>UnFollow</button>
+                    : <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
+                      props.follow(user.id)
+                    }}
+                    className={classes.follow}>Follow</button>
+                    
                 }
 
               </div>
@@ -42,7 +65,7 @@ const Users = (props) => {
               </div>
               <div className={classes.element}>
                 {/* <span className={classes.city}>{user.location.city}</span>
-                <p className={classes.country}>{user.location.country}</p> */}
+            <p className={classes.country}>{user.location.country}</p> */}
               </div>
 
             </div>
