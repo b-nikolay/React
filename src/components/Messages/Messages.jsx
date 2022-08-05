@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Messages.module.css';
 import UserItem from './User/UserItem';
 import Message from './Message/Message';
+import AddNewMessage from './AddNewMesage';
 
 
 
@@ -14,19 +15,10 @@ const Messages = (props) => {
 
   let messagesElements = state.messages.map(message => <Message message={message.message} key={message.id} />);
 
-  let newMessageBody = state.newMessageBody;
-
-  // let sendMessageElement = React.createRef();
-
-  let onSendMessageClick = () => {
-    props.sendMessage();
+  let newMessage = (values) => {
+    props.sendMessage(values.newMessageBody)
   }
 
-  let onNewMessageChange = (e) => {
-    let body = e.target.value;
-    props.updateMessageBody(body)
-
-  }
 
 
   return (
@@ -41,14 +33,8 @@ const Messages = (props) => {
             {messagesElements}
           </div>
           <div className={classes.messageSend}>
-            <textarea
-              value={newMessageBody}
-              rows="1"
-              placeholder='Enter your message'
-              onChange={onNewMessageChange}
-              >
-            </textarea>
-            <button onClick={onSendMessageClick} className={classes.button}>Send</button>
+            <AddNewMessage sendMessage={newMessage}/>
+        
           </div>
         </div>
       </div>

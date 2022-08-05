@@ -1,36 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setUserProfile } from '../../Redux/profile-reducer';
+import { getUserProfile, getUserStatus, updateStatus } from '../../Redux/profile-reducer';
 import Profile from './Profile';
-import { useLocation, useNavigate, useParams} from 'react-router-dom';
-import { usersAPI } from '../../API/API';
+import {  useLocation, useNavigate, useParams } from 'react-router-dom';
+import { compose } from 'redux';
 
 class ProfileContainer extends React.Component {
 
 
   componentDidMount() {
-    
     let userId = this.props.router.params.userId;
-
-    if(!userId) {
-      userId = 2;
+    if (!userId) {
+      userId = 25131 ;
     }
+    this.props.getUserProfile(userId);
+    this.props.getUserStatus(userId);
 
-    console.log(usersAPI.getProfile(userId));
-    usersAPI.getProfile(userId)
-
-    // axios
-    //   .get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId)
-    //   .then(response => {
-    //     this.props.setUserProfile(response.data)
-    //   });
   }
 
   render() {
     return (
       <Profile
         {...this.props}
-
+        status={this.props.status}
+        updateStatus={this.props.updateStatus}
       />
     )
   }
@@ -39,23 +32,25 @@ class ProfileContainer extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
 
+let mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
+    status: state.profilePage.status
   }
 
 }
 
-const withRouter = (Component) => {
+
+let withRouter = (Component) => {
   const ComponentWithRouterProps = (props) => {
     let location = useLocation();
     let navigate = useNavigate();
     let params = useParams();
     return (
-      <Component 
+      <Component
         {...props}
-        router={{location, navigate, params}}
+        router={{ location, navigate, params }}
       />
     )
   }
@@ -64,6 +59,5 @@ const withRouter = (Component) => {
 
 }
 
+export default compose(connect(mapStateToProps, { getUserProfile, getUserStatus, updateStatus }), withRouter) (ProfileContainer);
 
-
-export default connect(mapStateToProps, { setUserProfile })(withRouter(ProfileContainer));

@@ -1,5 +1,4 @@
 import * as axios from 'axios';
-import { setUserProfile } from '../Redux/profile-reducer';
 
 
 const instance = axios.create({
@@ -29,17 +28,29 @@ export const usersAPI = {
     .then(response => response.data)
   },
   getProfile(userId) {
-    return instance
-    .get(`profile/` + userId)  
+    return profileAPI.getProfile(userId)
     .then(response => response.data);
   }
 };
 
-export const headerAPI = {
-   getHeader() {
+export const profileAPI = {
+  getProfile(userId) {
+    return instance.get(`profile/${userId}` )
+  },
+  getStatus(userId) {
+    return instance.get(`profile/status/${userId}` )
+    .then(response => response.data);
+  },
+  updateStatus(status) {
+    return instance.put(`profile/status/`, {status} )
+    .then(response => response.data);
+  }
+}
+
+export const authAPI = {
+   me() {
     return instance
     .get(`auth/me`)
-    .then(response => response.data)
   }
 }
 

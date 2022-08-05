@@ -7,12 +7,7 @@ import classes from './Users.module.css';
 
 let Users = (props) => {
   let pagesCounts = Math.ceil(props.totalUsersCount / props.pageSize);
-
   let pages = [];
-
-  // let path = '/profile/*' + us
-
-
   for (let i = 1; i <= pagesCounts; i++) {
     pages.push(i)
   }

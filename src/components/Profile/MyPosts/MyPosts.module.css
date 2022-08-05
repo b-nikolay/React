@@ -13,21 +13,41 @@
   color: white;
   border: 1px solid white;
   padding: 10px;
+  padding-right: 50px;
   width: 100%;
   resize: none;
 }
 
+.form {
+  position: relative;
+  align-items: center;
+}
+.textarea {
+  width: 100%;
+}
 
 .newPost {
   margin-top: 20px;
 }
 
 .button {
+  height: 50px;
+  position: absolute;
   margin-left: auto;
   display: block;
   padding: 10px;
   background-color:blueviolet;
   color: white;
   font-size: 18px;
-  margin-top: 20px;
+  top: 15px;  
+  right: 10px;
+  bottom: 0;
+  border-radius: 0px;
+}
+.err {
+  color: red;
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  padding: 10px;
 }

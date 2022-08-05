@@ -73,12 +73,12 @@
 }
 
 button:disabled {
-  background-color: aqua;
-  color: black;
+  background-color: rgb(63, 63, 63);
+  color: white;
   transition: .1s ease-in-out;
 }
 button:disabled:hover {
-  background-color: aqua;
-  color: black;
+  background-color: rgb(63, 63, 63);
+  color: white;
   transition: .1s ease-in-out;
 }

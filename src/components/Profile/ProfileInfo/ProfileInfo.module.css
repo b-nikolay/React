@@ -14,11 +14,10 @@
 }
 
 .info {
-  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   width: 70%;
-  padding: 20px 0px;
+  padding: 0px 0px 20px 0px;
 }
 
 .avatar {
