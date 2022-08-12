@@ -3,11 +3,11 @@ const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let initialState = {
   users: [
-    { id: 1, name: 'Дмитрий' },
-    { id: 2, name: 'Антон' },
-    { id: 3, name: 'Валера' },
-    { id: 4, name: 'Денис' },
-    { id: 5, name: 'Андрей' },
+    { id: 1, name: 'Name 1' },
+    { id: 2, name: 'Name 2' },
+    { id: 3, name: 'Name 3' },
+    { id: 4, name: 'Name 4' },
+    { id: 5, name: 'Name 5' },
   ],
   messages: [
     { id: 1, message: 'Lorem ipsum dolor sit.' },

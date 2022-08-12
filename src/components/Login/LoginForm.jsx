@@ -11,7 +11,7 @@ import * as Yup from "yup";
 const validateLoginForm = values => {
   const errors = {};
   if (!values.email) {
-    errors.email = 'Required 1';
+    errors.email = 'Enter a email';
   } else if (
     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
   ) {
@@ -25,12 +25,13 @@ const validateLoginForm = values => {
 const validationSchemaLoginForm = Yup.object().shape({
   password: Yup.string()
     .min(2, "Must be longer than 2 characters")
-    .max(5, "Must be shorter than 5 characters")
-    .required("Required 2")
+    .required("Enter a password")
 });
 
 
-const LoginForm = (props) => {
+const LoginForm = ({login}) => {
+
+
   return (
     <Formik
     initialValues={{
@@ -40,18 +41,20 @@ const LoginForm = (props) => {
     }}
     validate={validateLoginForm}
     validationSchema={validationSchemaLoginForm}
-    onSubmit={(values) => {
-      console.log(values)
+    onSubmit={(values, {setStatus}) => {
+
+      login(values.email, values.password, values.rememberMe, setStatus);
+      
+
     }}
   >
-    {() => (
+    {(status) => (
       <Form>
         <div className={classes.input}>
           <Field
             name={'email'}
-            type={'text'}
+            type={'email'}
             placeholder={'e-mail'} />
-            
         <ErrorMessage name="email" component="span" className={classes.req} />
         </div>
         <div className={classes.input}>
@@ -69,7 +72,8 @@ const LoginForm = (props) => {
             id='rememberMe' />
           <label htmlFor={'rememberMe'}> remember me </label>
         </div>
-        <button type={'submit'}>Login</button>
+        <div className={classes.error}>{status.status}</div>
+        <button disabled={!(status.isValid && status.dirty)} className={classes.button} type={'submit'}>Login</button>
       </Form>
 
     )}

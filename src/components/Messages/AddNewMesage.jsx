@@ -19,7 +19,6 @@ const AddNewMessage = (props) => {
       }}
       validate={validateMessageForm}
       onSubmit={(values, { resetForm }) => {
-        console.log(values)
         props.sendMessage(values)
         resetForm(
           {
@@ -28,7 +27,7 @@ const AddNewMessage = (props) => {
         )
       }}
     >
-      {() => (
+      {(status) => (
         <Form className={classes.form}>
           <div className={classes.textarea}>
             <Field
@@ -41,7 +40,7 @@ const AddNewMessage = (props) => {
             />
             <ErrorMessage name="newMessageBody" component="span" className={classes.err} />
           </div>
-          <button  className={classes.button}  type={'submit'}>Send</button>
+          <button disabled={!(status.isValid && status.dirty)}   className={classes.button}  type={'submit'}>Send</button>
         </Form>
 
       )}

@@ -35,7 +35,6 @@ class ProfileStatus extends React.Component {
         
       })
     }
-    console.log(prevProps);
   }
 
   render() {
@@ -57,3 +56,130 @@ class ProfileStatus extends React.Component {
 }
 
 export default ProfileStatus;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect, useState } from 'react';
+
+// import classes from './ProfileInfo.module.css';
+
+// const ProfileStatus = (props) => {
+
+  
+//   let [editMode, setEditMode] = useState(false);
+//   let [status, setStatus] = useState(props.status);
+
+//   useEffect(() => {
+//     setStatus(props.status)
+
+//   }, [props.status]);
+
+//   const activateEditMode = () => {
+//     setEditMode(true)
+//   }
+//   const deactivateEditMode = () => {
+//     setEditMode(false)
+//     props.updateStatus(status)
+//   }
+
+//   const onStatusChange = (e) => {
+//     setStatus( e.currentTarget.value)
+//   }
+
+
+//     return (
+//       <div className={classes.status}>
+//         {!editMode &&
+//           <span onDoubleClick={activateEditMode} className="description">{props.status || 'No status'}</span>
+//         }
+
+//         {editMode &&
+//           <input onChange={onStatusChange} autoFocus={true} onBlur={deactivateEditMode} value={status}  type="text" placeholder='Your status' />
+//         }
+//       </div>
+//     )
+
+// }
+
+// export default ProfileStatus;

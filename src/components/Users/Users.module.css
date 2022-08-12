@@ -44,6 +44,10 @@
   background-color: rgb(112, 16, 202);
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+}
 
 .pagination span {
   cursor: pointer;
@@ -70,6 +74,31 @@
 .pagination {
   margin-bottom: 20px;
 
+}
+.paginationPrev {
+  margin-right: 20px;
+}
+.paginationNext {
+  margin-left: 10px;
+}
+
+.paginationPrev,
+.paginationNext {
+  padding: 5px;
+  font-size: 16px;
+  color:white;
+  font-weight: bold;
+  background-color: rgb(63, 63, 63);
+  border: 1px solid white;
+}
+
+
+.paginationPrev:hover,
+.paginationNext:hover {
+  color: blueviolet;
+  background-color: rgb(63, 63, 63);
+  
+  border: 1px solid blueviolet;
 }
 
 button:disabled {

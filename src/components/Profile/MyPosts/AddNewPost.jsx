@@ -19,7 +19,6 @@ const AddNewPost = (props) => {
       }}
       validate={validatePostForm}
       onSubmit={(values, { resetForm }) => {
-        console.log(values)
         props.addNewPost(values)
         resetForm(
           {
@@ -28,7 +27,7 @@ const AddNewPost = (props) => {
         )
       }}
     >
-      {() => (
+      {(status) => (
         <Form className={classes.form}>
           <div className={classes.textarea}>
             <Field
@@ -42,7 +41,7 @@ const AddNewPost = (props) => {
             <ErrorMessage name="newPostText" component='div'  className={classes.err} />
           </div>
           
-          <button className={classes.button}  type={'submit'}>Send</button>
+          <button disabled={!(status.isValid && status.dirty)}  className={classes.button}  type={'submit'}>Send</button>
         </Form>
 
       )}

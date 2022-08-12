@@ -19,6 +19,7 @@
     "react-scripts": "^2.1.8",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
+    "reselect": "^4.1.6",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
@@ -45,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-test-renderer": "^18.2.0"
   }
 }

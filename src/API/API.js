@@ -6,7 +6,7 @@ const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
 
-      'API-KEY': '67a689c5-4d97-468b-a6ca-6c25b9d31a57',
+      'API-KEY': '93571d07-2af1-4a80-8ba6-006e8fb0a4c2',
     }
 })
 
@@ -29,7 +29,6 @@ export const usersAPI = {
   },
   getProfile(userId) {
     return profileAPI.getProfile(userId)
-    .then(response => response.data);
   }
 };
 
@@ -39,11 +38,9 @@ export const profileAPI = {
   },
   getStatus(userId) {
     return instance.get(`profile/status/${userId}` )
-    .then(response => response.data);
   },
   updateStatus(status) {
     return instance.put(`profile/status/`, {status} )
-    .then(response => response.data);
   }
 }
 
@@ -51,6 +48,18 @@ export const authAPI = {
    me() {
     return instance
     .get(`auth/me`)
+  },
+  login(email, password, rememberMe = false) {
+    return instance
+    .post(`auth/login`, {email, password, rememberMe})
+  },
+  logout() {
+    return instance
+    .delete(`auth/login`)
+  },
+  capthca() {
+    return instance
+    .get(`/security/get-captcha-url`)
   }
 }
 

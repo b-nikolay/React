@@ -1,5 +1,6 @@
 import {  applyMiddleware, combineReducers , legacy_createStore as createStore  } from "redux";
 import thunk from "redux-thunk";
+import appReducer from "./app-reducer";
 import authReducer from "./auth-reducer";
 import messageReducer from "./message-reducer";
 import profileReducer from "./profile-reducer";
@@ -11,6 +12,7 @@ let reducers = combineReducers ({
   messagePage: messageReducer,
   sidebar: sidebarReducer,
   usersPage: usersReducer,
+  app: appReducer,
   auth: authReducer,
 });
 

@@ -2,7 +2,6 @@
   padding: 20px 0px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding-left: 10px;
   padding-right: 15px;
 }
@@ -20,14 +19,31 @@
   transition: .3s ease-in-out;
 }
 
-.login a {
-  
-  color: white ;
-  transition: .3s ease-in-out;
+.login  {
+
 }
 
-.login a:hover {
+.loginUser {
+  color: white ;
+  transition: .1s ease-in-out;
+  display: inline-block;
+  margin-right: 20px;
+}
+.logout, .logIn a{
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: .1s ease-in-out;
+  color: white;
+  background-color: rgba(97, 56, 56, 0);
+
+}
+.logout:hover, .loginUser:hover, .logIn a:hover{
   
-  color:blueviolet;
-  transition: .3s ease-in-out;
+  color: blueviolet;
+  background-color: rgba(97, 56, 56, 0);
+}
+.logIn {
+  margin-left: auto;
 }
